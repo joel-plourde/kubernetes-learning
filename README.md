@@ -20,6 +20,34 @@ The voting application consists of several microservices running inside Kubernet
 
 * **Result:** Web application displaying the aggregated results.
 
+## Applying Kubernetes Manifests
+
+Resources in this repository are organized into separate directories, for example:
+
+* deployments/
+* services/
+
+Navigate to the directory containing the manifests you want to apply.
+
+Example:
+
+```bash
+cd deployments
+kubectl apply -f .
+```
+
+This command applies **all YAML files in the current directory**.
+
+If needed, you can also apply manifests **one file at a time**:
+
+```bash
+kubectl apply -f vote-deployment.yaml
+kubectl apply -f redis-deployment.yaml
+kubectl apply -f worker-deployment.yaml
+```
+
+The same approach works for services or any other Kubernetes resources.
+
 ## Kubernetes Resources
 
 The application uses several Kubernetes components.
